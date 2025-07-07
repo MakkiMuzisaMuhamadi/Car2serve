@@ -35,7 +35,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'shuran.urls'
+ROOT_URLCONF = 'Car2serve.urls'
 
 TEMPLATES = [
     {
@@ -53,7 +53,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'shuran.wsgi.application'
+WSGI_APPLICATION = 'Car2serve.wsgi.application'
 
 
 
