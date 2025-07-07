@@ -1,0 +1,838 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Shuran-Home{% endblock %}
+{% load humanize%}
+{% block content%}
+
+<section class="hero-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="hero-content text-white text-center py-4 py-md-5">
+      <h1 class="hero-title mb-2 mb-md-3">Expert Car Repairs & Genuine Spare Parts</h1>
+      <p class="hero-subtitle mb-3 mb-md-4">Fast, Affordable, and Backed by 12-Month Warranty</p>
+      
+      <div class="cta-buttons">
+        <a href="/book-repair" class="btn btn-repair btn-lg mb-2 mb-md-0">
+          <i class="fas fa-tools me-2"></i> Book a Repair
+        </a>
+        <a href="/spare-parts" class="btn btn-parts btn-lg">
+          <i class="fas fa-cog me-2"></i> Browse Parts
+        </a>
+      </div>
+      
+      <div class="trust-badges mt-4 mt-md-5">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <i class="fas fa-user-shield trust-icon"></i>
+            <p class="trust-text">Certified Techs</p>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-clock trust-icon"></i>
+            <p class="trust-text">30-Min Response</p>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-phone-alt trust-icon"></i>
+            <p class="trust-text">24/7 Emergency</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<div class="container-fluid py-5">
+    <div class="container py-3">
+        <div class="row g-3">
+            <!-- Car Service -->
+            <div class="col-4 col-md-4 col-lg-2">
+              <a href="{% url 'booking_page' 'Car Service' %}" class="text-decoration-none text-dark">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/Car-Service.svg' %}" alt="Car Service" class="card-img-top p-3">
+                        <span class="service-badge bg-primary">Popular</span>
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Car Service</h5>
+                    </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Break Down Service -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/breakdown.png' %}" alt="Mobile Service" class="card-img-top p-3">
+                        <span class="service-badge bg-success">New</span>
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Break Down</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Service -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/mobile-service-20230315041034.png' %}" alt="Mobile Service" class="card-img-top p-3">
+                        <span class="service-badge bg-success">New</span>
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Mobile Service</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Service -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/carwash.png' %}" alt="Mobile Service" class="card-img-top p-3">
+                        <span class="service-badge bg-success">Special</span>
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Car Wash</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Repair -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/Car-Repair-20231021071339.png' %}" alt="Car Repair" class="card-img-top p-3">
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Car Repair</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Renewal -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/car-renewal-20230315040907.png' %}" alt="Car Renewal" class="card-img-top p-3">
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Car Renewal</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Contract -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/service-contract-20231021071950.png' %}" alt="Service Contract" class="card-img-top p-3">
+                        <span class="service-badge bg-info">Special</span>
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Service Contract</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rent a Car -->
+            <div class="col-4 col-md-4 col-lg-2">
+                <div class="service-card card border-0 bg-white shadow-sm mb-3">
+                    <div class="card-img-container position-relative">
+                        <img src="{% static 'img/download.png' %}" alt="Rent a Car" class="card-img-top p-3">
+                    </div>
+                    <div class="card-body text-center p-2">
+                        <h5 class="card-title mb-0">Rent a Car</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="service-process-tabs">
+  <div class="container">
+    <h2 class="section-title">Our Hassle-Free Service Journey</h2>
+    
+    <!-- Step Navigation -->
+    <div class="step-indicator">
+      <div class="step active" data-step="book">
+        <div class="step-bubble">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <span class="step-label">You Book</span>
+      </div>
+      
+      <div class="step" data-step="collect">
+        <div class="step-bubble">
+          <i class="fas fa-car-side"></i>
+        </div>
+        <span class="step-label">We Collect</span>
+      </div>
+      
+      <div class="step" data-step="service">
+        <div class="step-bubble">
+          <i class="fas fa-tools"></i>
+        </div>
+        <span class="step-label">We Service</span>
+      </div>
+      
+      <div class="step" data-step="deliver">
+        <div class="step-bubble">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <span class="step-label">We Deliver</span>
+      </div>
+    </div>
+    
+    <!-- Content Panels -->
+    <div class="process-content">
+      <!-- Book Panel -->
+      <div class="content-panel active" id="book">
+        <div class="booking-options">
+          <div class="option-card">
+            <div class="option-icon bg-blue">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>By Phone</h3>
+            <p>Our call centre operates from 8AM - 9PM, Monday to Saturday</p>
+            <a href="tel:8002665464" class="action-btn">
+              Call 800 266 5464
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon bg-green">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Online</h3>
+            <p>Make a booking anytime through our portal</p>
+            <a href="/book-online" class="action-btn">
+              Book Online
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <div class="option-card">
+            <div class="option-icon bg-purple">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile App</h3>
+            <p>Get our app for fastest booking experience</p>
+            <div class="app-download-form">
+              <div class="input-group">
+                <select class="country-code">
+                  <option>+971</option>
+                  <option>+966</option>
+                  <option>+968</option>
+                </select>
+                <input type="tel" placeholder="Phone number">
+                <button class="send-btn">
+                  Get App Link
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Collect Panel -->
+      <div class="content-panel" id="collect">
+        <div class="step-details">
+          <div class="detail-card">
+            <div class="detail-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Convenient Collection</h3>
+              <p>Our driver arrives at your chosen time and location to collect your vehicle. We conduct a thorough inspection and generate a collection report sent immediately via SMS and email.</p>
+            </div>
+          </div>
+          
+          <div class="detail-card">
+            <div class="detail-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Support Available</h3>
+              <p>For any concerns during collection, contact our customer support at 8002665464.</p>
+            </div>
+          </div>
+          
+          <div class="detail-card">
+            <div class="detail-icon">
+              <i class="fas fa-shield-virus"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Safety First</h3>
+              <p>All staff follow strict COVID-19 protocols including masks and gloves. Please remove valuables as your car passes through multiple departments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Service Panel -->
+      <div class="content-panel" id="service">
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h4>Workshop Arrival</h4>
+              <p>Your car is assigned a service advisor who creates a detailed report with images.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-step">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h4>Health Check</h4>
+              <p>Our technician performs a full inspection and sends you a health check report via SMS and email.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-step">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h4>Parts Approval</h4>
+              <p>We source the highest quality parts and send you a quotation for approval before any work begins.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-step">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h4>Service Execution</h4>
+              <p>After your approval, we immediately begin the repair/service using approved parts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Deliver Panel -->
+      <div class="content-panel" id="deliver">
+        <div class="delivery-steps">
+          <div class="delivery-step">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <h3>Quality Assurance</h3>
+            </div>
+            <p>Your car undergoes rigorous quality checks and a road test. If any issues are found, it returns for further diagnosis.</p>
+          </div>
+          
+          <div class="delivery-step">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <h3>Professional Cleaning</h3>
+            </div>
+            <p>We vacuum the interior and thoroughly wash the exterior, leaving your car spotless.</p>
+          </div>
+          
+          <div class="delivery-step">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <h3>Secure Payment</h3>
+            </div>
+            <p>Receive an invoice via SMS and email with a secure link for online payment.</p>
+          </div>
+          
+          <div class="delivery-step">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <h3>Final Delivery</h3>
+            </div>
+            <p>Our driver conducts a final inspection with you and provides a delivery report via SMS and email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Base Styles */
+.service-process-tabs {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2a5298;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Step Indicator - Updated for single line */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 10px; /* Space for scroll */
+}
+
+.step-indicator::-webkit-scrollbar {
+  display: none;
+}
+
+.step-indicator::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e0e6ed;
+  z-index: 1;
+}
+
+.step {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 80px;
+  padding: 0 10px;
+}
+
+.step-bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e0e6ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #64748b;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.step.active .step-bubble {
+  background: #2a5298;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(42, 82, 152, 0.3);
+}
+
+.step-label {
+  font-weight: 600;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-label {
+  color: #2a5298;
+  font-weight: 700;
+}
+
+/* Content Panels */
+.content-panel {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.content-panel.active {
+  display: block;
+}
+
+/* Book Panel Styles */
+.booking-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.option-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+}
+
+.option-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.bg-blue { background: #3b82f6; }
+.bg-green { background: #10b981; }
+.bg-purple { background: #8b5cf6; }
+
+.option-card h3 {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.option-card p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #f1f5f9;
+  color: #2a5298;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.action-btn i {
+  margin-left: 8px;
+}
+
+.action-btn:hover {
+  background: #2a5298;
+  color: white;
+}
+
+.app-download-form {
+  margin-top: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.country-code {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+}
+
+.input-group input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.send-btn {
+  flex: 1;
+  padding: 10px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.send-btn i {
+  margin-left: 8px;
+}
+
+.send-btn:hover {
+  background: #7c3aed;
+}
+
+/* Collect Panel Styles */
+.step-details {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.detail-card {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.detail-card:last-child {
+  margin-bottom: 0;
+}
+
+.detail-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #2a5298;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.detail-content h3 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.detail-content p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* Service Panel Styles */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-marker {
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2a5298;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.step-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.step-content h4 {
+  font-size: 1.1rem;
+  color: #2a5298;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* Deliver Panel Styles */
+.delivery-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.delivery-step {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2a5298;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.delivery-step h3 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.delivery-step p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .step-bubble {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .step-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Keep steps in single line - already handled by main styles */
+  
+  .booking-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .country-code,
+  .input-group input,
+  .send-btn {
+    width: 100%;
+  }
+  
+  .detail-card {
+    flex-direction: column;
+  }
+  
+  .detail-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .timeline::before {
+    left: 15px;
+  }
+  
+  .timeline-step {
+    padding-left: 30px;
+  }
+  
+  .step-marker {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .step {
+    min-width: 70px;
+  }
+  
+  .step-bubble {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .step-label {
+    font-size: 0.8rem;
+  }
+  
+  .option-card {
+    padding: 20px;
+  }
+  
+  .option-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const steps = document.querySelectorAll('.step');
+    
+    steps.forEach(step => {
+      step.addEventListener('click', function() {
+        // Remove active class from all steps
+        steps.forEach(s => s.classList.remove('active'));
+        
+        // Add active class to clicked step
+        this.classList.add('active');
+        
+        // Hide all content panels
+        document.querySelectorAll('.content-panel').forEach(panel => {
+          panel.classList.remove('active');
+        });
+        
+        // Show corresponding panel
+        const stepId = this.getAttribute('data-step');
+        document.getElementById(stepId).classList.add('active');
+      });
+    });
+  });
+</script>
+
+  
+{% include 'include.html' %}    <!-- Team End -->
+
+{% endblock %}

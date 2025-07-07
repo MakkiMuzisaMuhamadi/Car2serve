@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Success Booking{% endblock %}
+{% block content %}
+
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3 text-center">
+        <i class="fas fa-check-circle fa-5x text-success"></i>
+        <p>Thank you for your booking of <strong>{{ car_name }} {{car_model}}</strong>. We have received your booking order. One of our staff will contact you for confirmation.</p>
+        <p>In case of any inquiry, you can still <a href="/contact">contact us</a>.</p>
+    </div>
+</div>
+
+{% endblock %}

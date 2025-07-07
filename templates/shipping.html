@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize%}
+{% block title %}Shipping{% endblock %}
+{% block content%}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+    <h1 class="display-3 text-uppercase text-white mb-3">Cargo Shipping</h1>
+    <div class="d-inline-flex text-white">
+        <h6 class="text-uppercase m-0"><a class="text-white" href="/">Cargo Details</a></h6>
+
+    </div>
+</div>
+<!-- Page Header Start -->
+
+<!-- Car Booking Start -->
+<div class="container-fluid pb-5">
+    <div class="container">
+        <form method="post" action="{% url 'shipping' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <h2 class="mb-4">Cargo Details</h2>
+                    <div class="mb-5">
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="owner" >Cargo Owner Details</label>
+                                <input type="text" class="form-control p-4" placeholder="First name & Last name"
+                                    name="names" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control p-4" placeholder="Phone Number"
+                                    name="phonenumber" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control p-4" placeholder="Email"
+                                    name="email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="owner" >Cargo Details</label>
+                                <input type="text" class="form-control p-4" placeholder="Pick up Location"
+                                    name="location" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control p-4" placeholder="Destination"
+                                    name="destination" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control p-4" placeholder="Type of Cargo"
+                                    name="cargo" required>
+                            </div>
+                        </div>
+             
+                    </div>
+
+                </div>
+                <button class="btn btn-block btn-primary py-3">Book Now</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Car Booking End -->
+
+
+{% endblock %}

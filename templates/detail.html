@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize%}
+{% block title %}{{car.name}}-Shuran{% endblock %}
+{% block content%}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h1 class="display-3 text-uppercase text-white mb-3">Car Detail</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a class="text-white" href="/">Home</a></h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">Car Detail</h6>
+            <h6 class="text-body m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-body m-0">{{car.name}}</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Detail Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-8 mb-5">
+                    <h1 class="display-4 text-uppercase mb-5">{{car.name}}</h1>
+                    <h5>UGX {{car.price|intcomma}}/Day</h5>
+                    <div class="row mx-n2 mb-3">
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="{{car.image.url}}" alt="">
+                        </div>
+                        {% for image in cars_images %}
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="{{ image.image.url }}" alt="" style="height: 140px;">
+                        </div>
+                        {% endfor %}
+                      
+                    </div>
+                    <p>{{car.description}}</p>
+                    <div class="row pt-2">
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-car text-primary mr-2"></i>
+                            <span>Model: {{car.model}}</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-cogs text-primary mr-2"></i>
+                            <span>{{car.enginetype}}</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-road text-primary mr-2"></i>
+                            <span>{{car.fuelConsumption}}</span>
+                        </div>  
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-eye text-primary mr-2"></i>
+                            <span>GPS Navigation</span>
+                        </div>  
+                    </div>
+               </div>
+                <div class="col-lg-4 mb-5">
+                    <div class="bg-secondary p-5">
+                        <h3 class="text-primary text-center mb-4">Book This Car</h3>
+                        <form method="post" action="{% url 'booking' car.id %}">
+                            {% csrf_token %}
+                        <div class="form-group">
+                        <input type="text" class="form-control p-4" placeholder="First name & Last name" name="names" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control p-4" placeholder="Phone Number" name="phonenumber" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="date" id="date1" data-target-input="nearest">
+                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
+                                    data-target="#date1" data-toggle="datetimepicker" name="pickup_date" required/>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="time" id="time1" data-target-input="nearest">
+                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
+                                    data-target="#time1" data-toggle="datetimepicker" name="pickup_date" />
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="date" id="date2" data-target-input="nearest">
+                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date"
+                                    data-target="#date2" data-toggle="datetimepicker" name="return_date" required/>
+                            </div>
+                        </div>
+                     
+
+                        <div class="form-group mb-0">
+                            <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Book Now</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+    <!-- Detail End -->
+
+
+    <!-- Related Car Start -->
+    <div class="container-fluid pb-5">
+        <div class="container pb-5">
+            <h2 class="mb-4">Related Cars</h2>
+            <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
+                {% for similarcar in similar_cars%}
+                <div class="rent-item">
+                    <a href="{% url 'detail' similarcar.id%}">  <img class="img-fluid mb-4" src="{{similarcar.image.url}}" alt=""></a>
+                    <a href="{% url 'detail' similarcar.id%}">   <h4 class="text-uppercase mb-4">{{similarcar.name}}</h4> </a>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>{{similarcar.model}}</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>{{similarcar.enginetype}}</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="">UGX {{similarcar.price|intcomma}}</a>
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+    <!-- Related Car End -->
+
+
+    {% endblock %}

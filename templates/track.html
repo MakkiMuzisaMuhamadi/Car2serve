@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Cargo Tracking{% endblock %}
+{% load humanize%}
+{% block content%}
+
+<!-- Search Start -->
+<br><br>
+<div class="container-fluid bg-white pt-3 px-lg-5">
+	<form action="">
+		<div class="row mx-n2">
+			<div class="col-xl-12 col-lg-12 col-md-12 px-2">
+				<div class="form-group">
+					<input type="text" class="form-control p-4" placeholder="Enter Tracking Number"
+						name="trackingnumber">
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-4 col-md-6 px-2">
+                <a class="btn btn-primary py-md-3 px-md-5" href="/status">Track</a>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
