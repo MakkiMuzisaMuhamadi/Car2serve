@@ -8,7 +8,7 @@ charset-normalizer==3.4.0
 crispy-bootstrap4==2025.6
 cryptography
 cssselect2==0.8.0
-Django==5.0.5
+Django
 django-appconf==1.1.0
 django-bootstrap-modal-forms==3.0.5
 django-bootstrap3==24.3
